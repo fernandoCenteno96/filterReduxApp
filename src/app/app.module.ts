@@ -15,6 +15,7 @@ import { environment } from '../environments/environment'; // Angular CLI enviro
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { appReducers } from './app.reducers';
 import { FilterPipe } from './filter/filter.pipe';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { FilterPipe } from './filter/filter.pipe';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
